@@ -1,0 +1,21 @@
+# test_math_utils.py
+import pytest
+from autogem.math_utils import add_numbers
+
+@pytest.mark.parametrize("a, b, expected", [
+    (1, 2, 3),
+    (0, 0, 0),
+    (-1, -2, -3),
+    (1000000, 1000000, 2000000)
+])
+def test_add_numbers(a, b, expected):
+    assert add_numbers(a, b) == expected
+
+@pytest.mark.parametrize("a, b", [
+    (None, 2),
+    ("string", 2),
+    (2, "string")
+])
+def test_add_numbers_invalid_inputs(a, b):
+    with pytest.raises(TypeError):
+        add_numbers(a, b)
