@@ -1,14 +1,15 @@
 import base64
 import json
-
 import requests
+from src.config import Config
 from google.cloud import gemini_pro_models, gemini_vision_pro_models
 from src.utils import encode_image_to_base64
 
 
 class GeminiClient:
-    def __init__(self, api_key):
-        self.api_key = api_key
+    def __init__(self):
+        config = Config()
+        self.api_key = config.get_api_key()
         self.gemini_pro_client = gemini_pro_models.Ggemini_pro_models.GeminiProModelsServiceClient()
         self.gemini_vision_pro_client = gemini_vision_pro_models.GeminiVisionProModelsServiceClient()
 
