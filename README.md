@@ -64,5 +64,3 @@ for result in results:
 - The current implementation does not support streaming predictions.
 - Only prediction requests with single instances (images) are supported; batch predictions are not yet implemented.
 - The API may impose limits on the number of requests per minute or other usage restrictions.
-
-Adjust the command based on the project's programming language and chosen testing framework.
