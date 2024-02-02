@@ -5,6 +5,7 @@ from src import config_manager
 
 import requests
 from google.cloud import gemini_pro_models, gemini_vision_pro_models
+from src import logger
 from src.utils import encode_image_to_base64
 
 
@@ -23,7 +24,7 @@ class GeminiClient:
             response = self.gemini_pro_client.predict(request=request)
             return self.parse_prediction_results(response.predictions)
         except Exception as e:
-            print(f"Error during Gemini Pro Models prediction: {e}")
+            logger.error(f"Error during Gemini Pro Models prediction: {e}")
             return None
 
     def predict_with_gemini_vision_pro_models(self, model_name, image_path):
@@ -35,7 +36,7 @@ class GeminiClient:
             response = self.gemini_vision_pro_client.predict(request=request)
             return self.parse_prediction_results(response.predictions)
         except Exception as e:
-            print(f"Error during Gemini Vision Pro Models prediction: {e}")
+            logger.error(f"Error during Gemini Vision Pro Models prediction: {e}")
             return None
 
     def parse_prediction_results(self, predictions):
