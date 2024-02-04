@@ -10,6 +10,8 @@ For Python:
 python -m unittest discover tests
 ```
 
+For detailed documentation on system architecture, setup, and usage, refer to our [documentation](docs/README.md).
+
 ### Using the `GeminiClient` Class
 
 The `GeminiClient` class provides an interface to the Google Gemini Pro Models API and Google Gemini Vision Pro Models API. Here's how you can use it:
@@ -60,6 +62,8 @@ for result in results:
 ```
 
 ### Known Issues and Limitations
+
+For detailed documentation on system architecture, setup, and usage, refer to our [documentation](docs/README.md).
 
 - The current implementation does not support streaming predictions.
 - Only prediction requests with single instances (images) are supported; batch predictions are not yet implemented.
